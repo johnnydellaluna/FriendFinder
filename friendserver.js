@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 require('./routing/htmlRoutes.js')(app);
 
 // Requires and sets the API routes in this file
-require('.routing/apiRoutes.js')(app);
+require('./routing/apiRoutes.js')(app);
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);

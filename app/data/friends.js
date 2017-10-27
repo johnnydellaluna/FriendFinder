@@ -53,7 +53,7 @@ var friends = [
         "scores": [1, 3, 2, 1, 3, 3, 2, 5, 5, 4]
 
 
-    }
+    },
 
     {
         "name": "Zoot",
