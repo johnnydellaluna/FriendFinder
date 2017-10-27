@@ -18,14 +18,14 @@
             <input type="text" class="form-control" id="name">
         </div>
         <div class="form-group col-md-6">
-            <label for="picturelink">and a picture of yourself (URL please)</label>
-            <input type="text" class="form-control" id="picturelink">
+            <label for="photo">and a picture of yourself (URL please)</label>
+            <input type="text" class="form-control" id="photo">
         </div>
     </div>
     <div class="container">
         <h3><strong><font color="green">Question 1</font></strong></h3>
         <h4><strong>I like to make people happy.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 1">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -36,7 +36,7 @@
         <br>
         <h3><strong><font color="blue">Question 2</font></strong></h3>
         <h4><strong>The most important person in the world is me.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 2">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -47,7 +47,7 @@
         <br>
         <h3><strong><font color="orange">Question 3</font></strong></h3>
         <h4><strong>From time to time I get weird, and I'm kinda proud about it.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 3">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -58,7 +58,7 @@
         <br>
         <h3><strong><font color="pink">Question 4</font></strong></h3>
         <h4><strong>I consider myself a leader, not a follower.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 4">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -69,7 +69,7 @@
         <br>
         <h3><strong><font color="red">Question 5</font></strong></h3>
         <h4><strong>My ideal meal is fish and chips.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 5">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -80,7 +80,7 @@
         <br>
         <h3><strong><font color="yellow">Question 6</font></strong></h3>
         <h4><strong>I am often the funniest person in the room.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 6">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -91,7 +91,7 @@
         <br>
         <h3><strong><font color="green">Question 7</font></strong></h3>
         <h4><strong>It's not that easy being green.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 7">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -102,7 +102,7 @@
         <br>
         <h3><strong><font color="purple">Question 8</font></strong></h3>
         <h4><strong>Science and mathematics come easy to me.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 8">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -112,8 +112,8 @@
         </select>
         <br>
         <h3><strong><font color="orange">Question 9</font></strong></h3>
-        <h4><strong>I prefer having 5 good friends over 50 acquaintences.</strong></h4>
-        <select class="custom-select">
+        <h4><strong>I prefer having 5 good friends over 50 acquaintances.</strong></h4>
+        <select class="custom-select 9">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -124,7 +124,7 @@
         <br>
         <h3><strong><font color="blue">Question 10</font></strong></h3>
         <h4><strong>I feel that, in some surreal way, someone else has a hand in everything I do.</strong></h4>
-        <select class="custom-select">
+        <select class="custom-select 10">
             <option selected>Choose the best answer</option>
             <option value="5">5 (Strongly Agree)</option>
             <option value="4">4 (Agree)</option>
@@ -134,27 +134,75 @@
         </select>
         <br>
         <br>
+        <div class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body text-center">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <button type="button" class="btn btn-info btn-lg btn-block">Submit</button>
     </div>
     <br>
 </body>
+<script type="text/javascript">
+event.preventDefault();
 
-  <script type="text/javascript">
-    event.preventDefault();
-    
-    $(".btn btn-info btn-lg btn-block").on("click", function() {
-      var userProfile = {
-      name: $("#name").val().trim();
-      picture: $("#picturelink").val().trim();
-      score: [];
+$(".btn btn-info btn-lg btn-block").on("click", function() {
+    var matchStatus = $('.modal-title');
+    var modalBody = $('.modal-body');
+
+    var item1 = parseInt($('.custom-select 1').val());
+    var item2 = parseInt($('.custom-select 2').val());
+    var item3 = parseInt($('.custom-select 3').val());
+    var item4 = parseInt($('.custom-select 4').val());
+    var item5 = parseInt($('.custom-select 5').val());
+    var item6 = parseInt($('.custom-select 6').val());
+    var item7 = parseInt($('.custom-select 7').val());
+    var item8 = parseInt($('.custom-select 8').val());
+    var item9 = parseInt($('.custom-select 9').val());
+    var item10 = parseInt($('.custom-select 10').val());
+
+    var userProfile = {
+        name: $("#name").val().trim();
+        photo: $("#picturelink").val().trim();
+        scores: [
+            item1,
+            item2,
+            item3,
+            item4,
+            item5,
+            item6,
+            item7,
+            item8,
+            item9,
+            item10
+        ]
     };
 
-      $.post("/api/friends", userProfile, function(data) {
-        // What else needs to go in here?
-
-
-      });
+    var currentURL = window.location.origin;
+    // AJAX post the data to the friends API. 
+    $.post(currentURL + "/api/friends", userProfile, function(data) {
+        // If the data has a match, then show this
+        if (data.name !== undefined) {
+            matchStatus.html('Your match is...');
+            modalBody.html(data.name + data.photo);
+        } else {
+            // If no match, show this
+            modalBody.html('<p>There are currently a lot of Muppet matches to sort. Please try again in a bit!</p>');
+        }
+        // Toggle modal on
+        $('.modal').modal('toggle');
     });
-  </script>
+    
+</script>
 
 </html>
