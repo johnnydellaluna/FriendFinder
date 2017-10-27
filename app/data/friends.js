@@ -55,6 +55,14 @@ var friends = [
 
     }
 
+    {
+        "name": "Zoot",
+        "photo": "https://i.pinimg.com/736x/21/cd/ae/21cdae369104bde3ab772b8a4ac4bd28--the-muppets-style-icons.jpg",
+        "scores": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+
+
+    }
+
 ];
 
 module.exports = friends;
