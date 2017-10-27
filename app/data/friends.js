@@ -57,7 +57,7 @@ var friends = [
 
     {
         "name": "Zoot",
-        "photo": "https://i.pinimg.com/736x/21/cd/ae/21cdae369104bde3ab772b8a4ac4bd28--the-muppets-style-icons.jpg",
+        "photo": "http://img3.wikia.nocookie.net/__cb20111019203501/muppet/images/8/8d/Zootplayingup.png",
         "scores": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 
 
